@@ -4,7 +4,7 @@
 沒聽過不會去裝嗎?
 ## 裝好node js後...
 ```
-npm install -g electron socket.io
+npm install -g electron socket.io jquery
 ```
 ## 喔喔喔 可以RUN了
 ```

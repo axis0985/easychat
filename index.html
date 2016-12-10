@@ -1,18 +1,20 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>O_O</title>
     <link href="./app.css" rel="stylesheet" />
     <script src="./socket.js"></script>
+    <script src="./app.js"></script>
   </head>
   <body>
     <ul id="onlined"></ul>
     <div class="container">
-      <div class="chat"></div>
+      <div id="ch" class="chat"></div>
       <form class="input-area">
-        <input type="textarea" >
-        <input id="username" type="text" value>
-        <input type="submit">
+        <input id="msg" type="textarea" >
+        <input id="un" type="text" value>
+        <input id="submit" type="button" value="發送">
+        <input id="change" type="button" value="更名">
       </form>
     </div>
   </body>
