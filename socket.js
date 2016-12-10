@@ -1,5 +1,5 @@
 const io = require('socket.io-client');
-var sock = io.connect('http://localhost:808', {reconnect: true});
+var sock = io.connect('http://140.115.189.162:808', {reconnect: true});
 var s_id = "";
 var _uname = "";
 
