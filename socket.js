@@ -34,8 +34,10 @@ sock.on('user-add',function(res){
         node.setAttribute('class','users');
         node.appendChild(text);
         document.getElementById('onlined').appendChild(node);
+        $('#ch').append('<div class="message info">'+res._uname+" connected!</div>");
 });
 sock.on('user-bye',function(res){
+    $('#ch').append('<div class="message info">'+$('#'+res).html()+' disconnected!</div>');
     document.getElementById('onlined').removeChild(document.getElementById(res));
 });
 sock.on('user-talk',function(user,msg){
@@ -46,6 +48,6 @@ sock.on('user-talk',function(user,msg){
     document.getElementById('ch').appendChild(node);
 });
 sock.on('user-change',function(user,new_name){
+    $('#ch').append('<div class="message info">'+$('#'+user).html()+' renamed '+new_name+'</div>');
     $('#'+user).html(new_name);
-    console.log( $('#'+user));
 });
