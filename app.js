@@ -7,6 +7,7 @@ $(document).ready(function(){
         node.html($('#msg').val());
         $('#ch').append(node);
         $('#msg').val('');
+        scrollToEnd();
     });
     $('#change').on('click',function(e){
         e.preventDefault();
@@ -25,3 +26,7 @@ $(document).ready(function(){
         }
     });
 });
+var scrollToEnd = function(){
+    var _div = document.getElementById('ch');
+    _div.scrollTop = _div.scrollHeight;
+}
