@@ -29,29 +29,24 @@ sock.on('hsresponse',function(res){
 });
 sock.on('user-add',function(res){
   let node = document.createElement('li');
-        let text = document.createTextNode(res._uname);
-        node.setAttribute('id',res.s_id);
-        node.setAttribute('class','users');
-        node.appendChild(text);
-        document.getElementById('onlined').appendChild(node);
-        $('#ch').append('<div class="message info">'+res._uname+" connected!</div>");
+        let node = new $('<div class="message info"><span></span></div>');
+        node.children('span').html(res._name+' connected !');
+        $('#ch').append(node);
         scrollToEnd();
 });
 sock.on('user-bye',function(res){
-    $('#ch').append('<div class="message info">'+$('#'+res).html()+' disconnected!</div>');
+    $('#ch').append('<div class="message info"><span>'+$('#'+res).html()+' disconnected!</span></div>');
     document.getElementById('onlined').removeChild(document.getElementById(res));
     scrollToEnd();
 });
 sock.on('user-talk',function(user,msg){
-    let node = document.createElement('div');
-    node.setAttribute('class','message others');
-    let text = document.createTextNode($('#'+user).html()+' : '+ msg);
-    node.appendChild(text);
-    document.getElementById('ch').appendChild(node);
+    let node = new $('<div class="message others"><span></span></div>');
+    node.children('span').html($('#'+user).html()+' : '+ msg);
+    $('#ch').append(node);
     scrollToEnd();
 });
 sock.on('user-change',function(user,new_name){
-    $('#ch').append('<div class="message info">'+$('#'+user).html()+' renamed '+new_name+'</div>');
+    $('#ch').append('<div class="message info"><span>'+$('#'+user).html()+' renamed '+new_name+'</span></div>');
     $('#'+user).html(new_name);
     scrollToEnd();
 });

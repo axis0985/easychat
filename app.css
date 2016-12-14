@@ -1,6 +1,33 @@
 body {
     margin:0 auto;
 }
+li.users {
+    padding: 5px 10px;
+    background: #eef5f0;
+}
+li.users:hover {
+    background: #ffcccc;
+}
+.message span{
+    font-size:1.5em;
+    border-radius: 3px;
+    padding: 2px 15px;
+}
+.message.others span{
+    background: #e6e6e6;
+}
+.message.info {
+    text-align: center;
+}
+.message.info span{
+    background: #ffb366;
+}
+.message.you {
+    text-align: right;
+}
+.message.you span{
+    background: #cecef6;
+}
 ul {
     padding: 0px;
     margin: 0px;
@@ -9,7 +36,7 @@ ul {
     float:left;
     width:250px;
     height:100%;
-    border-right:2px solid ;
+    border-right:2px solid #cfcfcf;
 }
 .main {
     position: fixed;
@@ -23,7 +50,7 @@ ul {
 }
 .input-area{
     position:relative;
-    border-top:2px solid;
+    border-top:2px solid #cfcfcf;
     padding: 5px auto;
     height:20%;
 }
@@ -42,5 +69,6 @@ input[type=textarea] {
 input[type=button] {
     float:right;
     border: 0px ;
-    border-radius: 5px auto;
+    margin: 0 5px;
+    border-radius: 2px;
 }

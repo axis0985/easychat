@@ -3,8 +3,8 @@ $(document).ready(function(){
     $('#submit').on('click',function(e){
         e.preventDefault();
         sock.emit('talk',s_id,$('#msg').val());
-        let node = new $('<div class="message you"></div>');
-        node.html($('#msg').val());
+        let node = new $('<div class="message you"><span></span></div>');
+        node.children('span').html($('#msg').val());
         $('#ch').append(node);
         $('#msg').val('');
         scrollToEnd();
